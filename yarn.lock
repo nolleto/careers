@@ -4962,10 +4962,10 @@ flatted@^2.0.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-2.0.1.tgz#69e57caa8f0eacbc281d2e2cb458d46fdb449e08"
   integrity sha512-a1hQMktqW9Nmqr5aktAux3JMNqaucxGcjtjWnZLHX7yyPCmlSV3M54nGYbqT8K+0GhF3NBgmJCc3ma+WOgX8Jg==
 
-flokit@^1.0.0-alpha.0:
-  version "1.0.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/flokit/-/flokit-1.0.0-alpha.0.tgz#ab4e57f644fe76521ae21ee3d605b4b8e662c098"
-  integrity sha512-M3g3mPmgUsZt71iibXX7JR5OJldcb8sD+JTXZ25Pq+2MCLbumB03+taQZrD8AU53VoQpj4yEw0RDf20/z/GXdA==
+flokit@^1.0.0-alpha.1:
+  version "1.0.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/flokit/-/flokit-1.0.0-alpha.1.tgz#7974fef819cf2b7bf9d6f2f38bbcc9a550418805"
+  integrity sha512-pEE/j4p1JeZdV1ENHDq7bMT3otX0Wxo2OhlHdjlP5OODExcJpjnaavUGz1kwvpQJorIE6+2+kQDwEZZvRa4QOQ==
   dependencies:
     styled-components "^4.3.2"
     styled-system "^4.2.3"
