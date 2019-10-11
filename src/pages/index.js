@@ -14,19 +14,24 @@ const Header = () => (
     height='70px'
   >
     <Container as={Flex} height='100%' alignItems='center'>
-      <Heading as='h1' color='white' fontSize='4' fontWeight='2'>
-        <Link as='a' href='https://codeminer42.com'>
+      <Link as='a' href='https://codeminer42.com'>
+        <Heading
+          as='h1'
+          color='white'
+          fontSize='4'
+          fontWeight='2'
+          textTransform='uppercase'
+        >
           <Flex justifyContent='center' alignItems='center'>
             <Image
               src='logo.png'
               alt='Codeminer 42'
               style={{ width: '50.5px', height: '32px', marginRight: '8px' }}
             />
-
-            {'Codeminer42'.toUpperCase()}
+            Codeminer42
           </Flex>
-        </Link>
-      </Heading>
+        </Heading>
+      </Link>
     </Container>
   </Box>
 )
@@ -45,9 +50,10 @@ const Hero = () => (
         fontWeight='2'
         color='white'
         textAlign='center'
+        textTransform='uppercase'
         textShadow='0 3px 8px rgba(0,0,0,.4)'
       >
-        {'Open Positions'.toUpperCase()}
+        Open Positions
       </Heading>
 
       <Text
