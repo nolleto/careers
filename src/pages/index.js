@@ -1,20 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import styled from 'styled-components'
 import { Box, Flex, Heading, Text } from 'flokit'
-import { BackgroundImage, Container, Image } from '../components'
-
-const Link = styled.a`
-  text-decoration: none;
-  opacity: 1;
-  cursor: pointer;
-  transition: ease 0.3s;
-  color: inherit;
-
-  &:hover {
-    opacity: 0.6;
-  }
-`
+import { BackgroundImage, Container, Image, Link } from '../components'
 
 const Header = () => (
   <Box
@@ -28,19 +15,16 @@ const Header = () => (
   >
     <Container as={Flex} height='100%' alignItems='center'>
       <Heading as='h1' color='white' fontSize='4' fontWeight='2'>
-        <Link
-          as={Flex}
-          href='https://codeminer42.com'
-          alignItems='center'
-          justifyContent='center'
-        >
-          <Image
-            src='logo.png'
-            alt='Codeminer 42'
-            style={{ width: '50.5px', height: '32px', marginRight: '8px' }}
-          />
+        <Link as='a' href='https://codeminer42.com'>
+          <Flex justifyContent='center' alignItems='center'>
+            <Image
+              src='logo.png'
+              alt='Codeminer 42'
+              style={{ width: '50.5px', height: '32px', marginRight: '8px' }}
+            />
 
-          {'Codeminer42'.toUpperCase()}
+            {'Codeminer42'.toUpperCase()}
+          </Flex>
         </Link>
       </Heading>
     </Container>
@@ -95,7 +79,9 @@ const Footer = () => (
   <Box as='footer'>
     <Container marginTop='5'>
       <Flex justifyContent='center' alignItems='center' py='4'>
-        <Link href='https://codeminer42.com'>© Codeminer42</Link>
+        <Link as='a' href='https://codeminer42.com'>
+          © Codeminer42
+        </Link>
       </Flex>
     </Container>
   </Box>
