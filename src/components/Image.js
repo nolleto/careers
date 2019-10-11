@@ -7,7 +7,6 @@ const IMAGES_QUERY = graphql`
     images: allFile(filter: { extension: { regex: "/jpeg|jpg|png|gif/" } }) {
       edges {
         node {
-          extension
           relativePath
           childImageSharp {
             fluid(maxWidth: 1000) {
