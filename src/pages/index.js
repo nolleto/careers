@@ -3,6 +3,9 @@ import { graphql } from 'gatsby'
 import { Box, Flex, Heading, Text } from 'flokit'
 import { BackgroundImage, Container, Image, Link } from '../components'
 
+import TagList from '../components/TagList'
+import JobCard from '../components/JobCard'
+
 const Header = () => (
   <Box
     as='header'
@@ -111,9 +114,10 @@ const IndexPage = ({ data }) => {
                 const job = edge.node
 
                 return (
-                  <li key={job.path}>
-                    <Link to={job.path}>{job.title}</Link>
-                  </li>
+                  <JobCard tag={'li'} key={job.slug}>
+                    <Link to={`/jobs/${job.slug}`}>{job.title}</Link>
+                    <TagList tags={job.tags} />
+                  </JobCard>
                 )
               })}
             </ul>
@@ -130,11 +134,14 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   query IndexQuery {
-    jobs: allJobsJson(sort: { order: ASC, fields: [path] }) {
+    jobs: allContentfulJob(sort: { order: ASC, fields: [slug] }) {
       edges {
         node {
+          slug
           title
-          path
+          tags {
+            name
+          }
         }
       }
     }
