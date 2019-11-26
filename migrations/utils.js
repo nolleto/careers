@@ -15,6 +15,9 @@ const getContentType = async function(contentTypeId) {
   return environment.getContentType(contentTypeId)
 }
 
+const hasFieldInContentType = (ct, fieldId) =>
+  ct.fields.some((fld) => fld.id === fieldId)
+
 module.exports = {
   async upsertContentType(migration, contentTypeId) {
     try {
@@ -25,15 +28,15 @@ module.exports = {
     }
   },
 
-  async upsertField(contentType, fieldId) {
+  async upsertField(contentType, fieldId, options = {}) {
     try {
       const ct = await getContentType(contentType.id)
-      if (ct.fields.some((fld) => fld.id === fieldId)) {
-        return contentType.editField(fieldId)
+      if (hasFieldInContentType(ct, fieldId)) {
+        return contentType.editField(fieldId, options)
       }
       throw new Error(`Field ${fieldId} does not exist.`)
     } catch {
-      return contentType.createField(fieldId)
+      return contentType.createField(fieldId, options)
     }
   },
 }
